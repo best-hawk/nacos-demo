@@ -39,7 +39,7 @@ public class CommonController {
     }
 
     /**
-     * boot不支持yml类型的配置，只支持porperties格式
+     * boot也支持yml文件配置，需要在dataId中写完整
      */
     @NacosValue(value = "${useLocalCache:false}", autoRefreshed = true)
     private boolean useLocalCache;
