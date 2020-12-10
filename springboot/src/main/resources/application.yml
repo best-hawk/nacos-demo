@@ -1,0 +1,29 @@
+server:
+  port: 8081
+spring:
+  application:
+    name: nacos-demo-springboot
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver #mysql8.0以上版本驱动
+    url: jdbc:mysql://127.0.0.1:3306/demo?useSSL=false&useUnicode=true&characterEncoding=UTF8&serverTimezone=Asia/Shanghai&zeroDateTimeBehavior=CONVERT_TO_NULL&autoReconnect=true
+    username: root
+    password: 123456
+  jpa:
+    hibernate:
+      ddl-auto: update
+      show-sql: true
+    open-in-view: true # 将jpa的session绑定到整个线程的Servlet过滤器，
+                        # 处理请求将Session对象的创建交给当前线程管理，当前线程维护着一个“Session的连接池”
+                        # 意义: 在事务外也可以访问懒加载的数据，默认值 true
+
+# springboot接入nacos配置
+nacos:
+  config:
+    server-addr: http://hawk.com:8808
+    username: nacos
+    password: nacos
+  discovery:
+    server-addr: http://hawk.com:8808
+    # 配置
+    username: nacos
+    password: nacos

@@ -1,0 +1,19 @@
+server:
+  port: 8090
+spring:
+  application:
+    name: nacos-demo-springcloud-consumer
+  cloud:
+    nacos:
+      username: nacos
+      password: nacos
+      config:
+        server-addr: http://hawk.com:8808
+        file-extension: yml
+        #group: DEFAULT_GROUP #默认DEFAULT_GROUP
+      discovery:
+        server-addr: http://hawk.com:8808
+
+
+
+
